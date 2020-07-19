@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
@@ -11,24 +12,24 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jsh.item.HopperController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jsh.item.HopperController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="196.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.0" minWidth="10.0" prefWidth="404.0" />
+    <ColumnConstraints hgrow="NEVER" maxWidth="295.0" minWidth="10.0" prefWidth="196.0" />
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="404.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="75.0" minHeight="3.0" prefHeight="37.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="제목" textAlignment="RIGHT" />
-      <TextField fx:id="title" GridPane.columnIndex="1" />
-      <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TextField fx:id="title" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+      <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="324.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="itemTitle" onEditCommit="#editItemTitle" prefWidth="75.0" sortable="false" text="제목" />
+          <TableColumn fx:id="itemTitle" onEditCommit="#editItemTitle" sortable="false" text="제목" />
           <TableColumn fx:id="itemContent" onEditCommit="#editItemContent" prefWidth="75.0" sortable="false" text="내용" />
         </columns>
       </TableView>
@@ -43,4 +44,7 @@
       <TextField fx:id="resultTitle" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <TextArea fx:id="resultContent" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
    </children>
+   <padding>
+      <Insets bottom="30.0" left="80.0" right="80.0" top="30.0" />
+   </padding>
 </GridPane>

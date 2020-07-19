@@ -3,11 +3,10 @@ package jsh.item;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.text.Text;
+import jsh.WrappingTextFieldTableCell;
 
 public class HopperController extends ItemController<Hopper> {
 
@@ -50,8 +49,22 @@ public class HopperController extends ItemController<Hopper> {
 
         itemTitle.setCellValueFactory(cellData -> cellData.getValue().getTitle());
         itemContent.setCellValueFactory(cellData -> cellData.getValue().getContent());
-        itemTitle.setCellFactory(TextFieldTableCell.forTableColumn());
-        itemContent.setCellFactory(TextFieldTableCell.forTableColumn());
+        itemTitle.setCellFactory(tableColumn -> {
+            TableCell<Content, String> cell = new WrappingTextFieldTableCell<>();
+            Text text = new Text();
+            cell.setGraphic(text);
+            text.wrappingWidthProperty().bind(cell.widthProperty());
+            text.textProperty().bind(cell.itemProperty());
+            return cell;
+        });
+        itemContent.setCellFactory(tableColumn -> {
+            TableCell<Content, String> cell = new WrappingTextFieldTableCell<>();
+            Text text = new Text();
+            cell.setGraphic(text);
+            text.wrappingWidthProperty().bind(cell.widthProperty());
+            text.textProperty().bind(cell.itemProperty());
+            return cell;
+        });
 
         Bindings.bindBidirectional(title.textProperty(), item.getTitle());
 

@@ -33,7 +33,7 @@ public class TextListController extends ItemController<TextList> {
         if (item.getContents() == null) item.setContents(FXCollections.observableArrayList());
         list.setItems(item.getContents());
 
-        list.setCellFactory(TextFieldListCell.forListView());
+        list.setCellFactory(TextFieldListCell.forListView()); //TODO Line wrap
 
         Bindings.bindBidirectional(title.textProperty(), item.getTitle());
     }

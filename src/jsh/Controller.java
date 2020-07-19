@@ -8,12 +8,16 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import jsh.item.*;
+import jsh.item.Image;
 import jsh.item.Process;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -55,15 +59,15 @@ public class Controller {
     }
 
     @FXML
-    private void export() {
+    private File export() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         File directory = directoryChooser.showDialog(main.getStage());
         main.compileHTML(directory);
+        return directory;
     }
 
     @FXML
     private void exportOpen() {
-
     }
 
     @FXML
@@ -124,7 +128,7 @@ public class Controller {
         try {
             TitledPane titledPane = new TitledPane();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Pane root;
+            GridPane root;
 
             titledPane.setText(title);
             fxmlLoader.setLocation(Controller.class.getResource(resourceURL));
@@ -135,6 +139,8 @@ public class Controller {
             titledPane.setContent(root);
             fxmlLoader.<ItemController<T>>getController().initialize_();
 
+            root.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+            root.prefWidthProperty().bind(titledPane.widthProperty().multiply(0.9f));
             return titledPane;
         } catch (IOException e) {
             e.printStackTrace();
