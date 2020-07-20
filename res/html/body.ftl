@@ -1,5 +1,13 @@
 <html>
 <header>
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            document.addEventListener('click', function (event) {
+                window.location = (window.location.href.split('/').pop().split('.')[0] * 1 + 1) + ".html";
+            })
+        });
+    </script>
     <link rel="stylesheet" type="text/css" href="master.css">
     <style>
         .title {

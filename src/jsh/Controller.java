@@ -68,6 +68,11 @@ public class Controller {
 
     @FXML
     private void exportOpen() {
+        try {
+            Desktop.getDesktop().open(new File(export(), "0.html"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

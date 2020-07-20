@@ -87,6 +87,7 @@ public class Main extends Application {
             Files.copy(new File(Main.class.getResource("/image/right_arrow.svg").toURI()).toPath(), new File(directory, "right_arrow.svg").toPath());
             Files.copy(new File(Main.class.getResource("/image/hopper.svg").toURI()).toPath(), new File(directory, "hopper.svg").toPath());
             Files.copy(new File(Main.class.getResource("/html/master.css").toURI()).toPath(), new File(directory, "master.css").toPath());
+            Files.copy(new File(Main.class.getResource("/html/jquery.js").toURI()).toPath(), new File(directory, "jquery.js").toPath());
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
