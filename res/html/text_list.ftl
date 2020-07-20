@@ -28,11 +28,11 @@
 </header>
 
 <body>
-    <div class="title">${title}</div>
-    <div class="content">
+    <div class="title main">${title}</div>
+    <div class="content text">
         <ul>
         <#list contents as content>
-            <li>${content}</li>
+            <li class="text">${content}</li>
         </#list>
         </ul>
     </div>

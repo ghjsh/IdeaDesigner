@@ -27,7 +27,7 @@
     </style>
 </header>
 <body>
-    <div class="title">${title}</div>
-    <div class="content">${content}</div>
+    <div class="title main">${title}</div>
+    <div class="content text">${content}</div>
 </body>
 </html>

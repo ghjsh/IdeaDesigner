@@ -9,10 +9,42 @@ body {
     height: 100%;
     display: block;
     line-height: 1.5;
-    font-family: '나눔스퀘어';
         user-select: none;
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none;
+        background-color: #282A2E;
+}
+
+svg {
+    fill: #3CB9B3;
+}
+
+.interaction {
+    border: 5px #3CB9B3 solid;
+    border-radius: 8px;
+}
+
+.box {
+    border-radius: 1vw;
+    border: 5px solid #3CB9B3;
+}
+
+.main {
+    font-family: 'b.ttf';
+    color: #3CB9B3;
+}
+
+.text {
+    font-family: 'a.ttf';
+    color: #E6E6E6;
+}
+
+.box .text {
+    color: #E6E6E6;
+}
+
+.box .main {
+    color: #3CB9B3;
 }

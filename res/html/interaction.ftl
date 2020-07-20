@@ -18,8 +18,6 @@
         }
 
         .left_box {
-            border: 5px black solid;
-            border-radius: 8px;
             display: inline-block;
             position: absolute;
             margin: 2vw;
@@ -31,8 +29,6 @@
         }
 
         .right_box {
-            border: 5px black solid;
-            border-radius: 5px;
             display: inline-block;
             position: absolute;
             margin: 2vw;
@@ -75,16 +71,16 @@
     </style>
 </header>
 <body>
-    <div class="title">${title}</div>
-    <div class="left_box">
-        <div class="content_title">${left_title}</div>
-        <div class="content_content">${left_content}</div>
+    <div class="title main">${title}</div>
+    <div class="left_box interaction">
+        <div class="content_title main">${left_title}</div>
+        <div class="content_content text">${left_content}</div>
     </div>
-    <div class="right_box">
-        <div class="content_title">${right_title}</div>
-        <div class="content_content">${right_content}</div>
+    <div class="right_box interaction">
+        <div class="content_title main">${right_title}</div>
+        <div class="content_content text">${right_content}</div>
     </div>
-    <img class="left_arrow" src="right_arrow.svg">
-    <img class="right_arrow" src="right_arrow.svg">
+    <svg class="right_arrow" height="362pt" viewBox="-74 0 362 362.66667" width="362pt" xmlns="http://www.w3.org/2000/svg"><path d="m213.667969 181.332031c0 4.269531-1.28125 8.535157-3.628907 11.734375l-106.664062 160c-3.839844 5.761719-10.242188 9.601563-17.707031 9.601563h-64c-11.734375 0-21.335938-9.601563-21.335938-21.335938 0-4.265625 1.28125-8.53125 3.628907-11.730469l98.773437-148.269531-98.773437-148.265625c-2.347657-3.199218-3.628907-7.464844-3.628907-11.734375 0-11.730469 9.601563-21.332031 21.335938-21.332031h64c7.464843 0 13.867187 3.839844 17.707031 9.601562l106.664062 160c2.347657 3.199219 3.628907 7.464844 3.628907 11.730469zm0 0"/></svg>
+    <svg class="left_arrow" height="362pt" viewBox="-74 0 362 362.66667" width="362pt" xmlns="http://www.w3.org/2000/svg"><path d="m213.667969 181.332031c0 4.269531-1.28125 8.535157-3.628907 11.734375l-106.664062 160c-3.839844 5.761719-10.242188 9.601563-17.707031 9.601563h-64c-11.734375 0-21.335938-9.601563-21.335938-21.335938 0-4.265625 1.28125-8.53125 3.628907-11.730469l98.773437-148.269531-98.773437-148.265625c-2.347657-3.199218-3.628907-7.464844-3.628907-11.734375 0-11.730469 9.601563-21.332031 21.335938-21.332031h64c7.464843 0 13.867187 3.839844 17.707031 9.601562l106.664062 160c2.347657 3.199219 3.628907 7.464844 3.628907 11.730469zm0 0"/></svg>
 </body>
 </html>

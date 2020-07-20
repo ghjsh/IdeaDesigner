@@ -29,7 +29,7 @@
     </style>
 </header>
 <body>
-    <div class="title">${title}</div>
-    <div class="subtitle">${subtitle}</div>
+    <div class="title main">${title}</div>
+    <div class="subtitle main">${subtitle}</div>
 </body>
 </html>

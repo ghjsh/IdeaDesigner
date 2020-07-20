@@ -88,6 +88,8 @@ public class Main extends Application {
             Files.copy(new File(Main.class.getResource("/image/hopper.svg").toURI()).toPath(), new File(directory, "hopper.svg").toPath());
             Files.copy(new File(Main.class.getResource("/html/master.css").toURI()).toPath(), new File(directory, "master.css").toPath());
             Files.copy(new File(Main.class.getResource("/html/jquery.js").toURI()).toPath(), new File(directory, "jquery.js").toPath());
+            Files.copy(new File(Main.class.getResource("/font/a.ttf").toURI()).toPath(), new File(directory, "a.ttf").toPath());
+            Files.copy(new File(Main.class.getResource("/font/b.ttf").toURI()).toPath(), new File(directory, "b.ttf").toPath());
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
@@ -118,9 +120,9 @@ public class Main extends Application {
                 } else if (item instanceof Hopper) {
                     template = config.getTemplate("/html/hopper.ftl");
                     data.put("title", ((Hopper) item).getTitle().get());
-                    Map<String, String> contents = new LinkedHashMap<>();
-                    for (Content content : ((Hopper) item).getContents()) contents.put(content.getTitle().get(), content.getContent().get());
-                    data.put("contents", contents);
+//                    Map<String, String> contents = new LinkedHashMap<>();
+//                    for (Content content : ((Hopper) item).getContents()) contents.put(content.getTitle().get(), content.getContent().get());
+                    data.put("contents", ((Hopper) item).getContents());
                     data.put("result_title", ((Hopper) item).getResult().getTitle().get());
                     data.put("result_content", ((Hopper) item).getResult().getContent().get());
                 } else if (item instanceof Interaction) {

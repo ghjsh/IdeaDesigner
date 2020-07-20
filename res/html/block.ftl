@@ -25,13 +25,11 @@
         }
         
         .block {
-            border-radius: 1vw;
             display: inline-block;
             margin: 2vw;
             width: 20vw;
             height: 25vh;
             vertical-align: top;
-            background-color: aquamarine;
         }
         
         .content_title {
@@ -47,12 +45,12 @@
     </style>
 </header>
 <body>
-    <div class="title">${title}</div>
-    <div class="content">
+    <div class="title main">${title}</div>
+    <div class="content text">
         <#list contents as content_title, content_content>
-        <div class="block">
-            <div class="content_title">${content_title}</div>
-            <div class="content_content">${content_content}</div>
+        <div class="block box">
+            <div class="content_title main">${content_title}</div>
+            <div class="content_content text">${content_content}</div>
         </div>
         </#list>
     </div>

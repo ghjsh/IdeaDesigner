@@ -28,4 +28,12 @@ public class Content {
         this.title = new SimpleStringProperty(title);
         this.content = new SimpleStringProperty(content);
     }
+
+    public String getTitleValue() {
+        return title.get();
+    }
+
+    public String getContentValue() {
+        return content.get();
+    }
 }
