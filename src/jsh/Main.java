@@ -22,7 +22,7 @@ import java.util.*;
 public class Main extends Application {
 
     private final String APP_NAME = "IdeaDesigner";
-    private final String APP_VERSION = "0.1.0";
+    private final String APP_VERSION = "0.2.0";
 
     private final List<Item> itemList = new ArrayList<>();
 
@@ -120,8 +120,6 @@ public class Main extends Application {
                 } else if (item instanceof Hopper) {
                     template = config.getTemplate("/html/hopper.ftl");
                     data.put("title", ((Hopper) item).getTitle().get());
-//                    Map<String, String> contents = new LinkedHashMap<>();
-//                    for (Content content : ((Hopper) item).getContents()) contents.put(content.getTitle().get(), content.getContent().get());
                     data.put("contents", ((Hopper) item).getContents());
                     data.put("result_title", ((Hopper) item).getResult().getTitle().get());
                     data.put("result_content", ((Hopper) item).getResult().getContent().get());
@@ -135,16 +133,12 @@ public class Main extends Application {
                 } else if (item instanceof Process) {
                     template = config.getTemplate("/html/process.ftl");
                     data.put("title", ((Process) item).getTitle().get());
-                    Map<String, String> contents = new LinkedHashMap<>();
-                    for (Content content : ((Process) item).getContents()) contents.put(content.getTitle().get(), content.getContent().get());
-                    data.put("contents", contents);
+                    data.put("contents", ((Process) item).getContents());
 //                } else if (item instanceof Image) {
                 } else if (item instanceof Block) {
                     template = config.getTemplate("/html/block.ftl");
                     data.put("title", ((Block) item).getTitle().get());
-                    Map<String, String> contents = new HashMap<>();
-                    for (Content content : ((Block) item).getContents()) contents.put(content.getTitle().get(), content.getContent().get());
-                    data.put("contents", contents);
+                    data.put("contents", ((Block) item).getContents());
                 } else {
                     System.out.println("ERROR: item");
                     return;

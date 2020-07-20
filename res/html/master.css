@@ -32,12 +32,12 @@ svg {
 }
 
 .main {
-    font-family: 'b.ttf';
+    font-family: 'title';
     color: #3CB9B3;
 }
 
 .text {
-    font-family: 'a.ttf';
+    font-family: 'text';
     color: #E6E6E6;
 }
 
@@ -47,4 +47,14 @@ svg {
 
 .box .main {
     color: #3CB9B3;
+}
+
+@font-face {
+    font-family: 'title';
+    src: url('b.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'text';
+    src: url('a.ttf') format('truetype');
 }

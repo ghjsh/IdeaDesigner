@@ -52,10 +52,10 @@
 <body>
     <div class="title main">${title}</div>
     <div class="content">
-        <#list contents as content_title, content_content>
+        <#list contents as content>
         <div class="block box">
-                <div class="content_title main">${content_title}</div>
-                <div class="content_content text">${content_content}</div>
+                <div class="content_title main">${content.titleValue}</div>
+                <div class="content_content text">${content.contentValue}</div>
         </div>
         <#sep>
         <svg class="arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">

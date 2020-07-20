@@ -47,10 +47,10 @@
 <body>
     <div class="title main">${title}</div>
     <div class="content text">
-        <#list contents as content_title, content_content>
+        <#list contents as content>
         <div class="block box">
-            <div class="content_title main">${content_title}</div>
-            <div class="content_content text">${content_content}</div>
+            <div class="content_title main">${content.titleValue}</div>
+            <div class="content_content text">${content.contentValue}</div>
         </div>
         </#list>
     </div>
