@@ -9,20 +9,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import jfxtras.styles.jmetro.JMetro;
+import jfxtras.styles.jmetro.Style;
 import jsh.item.*;
 import jsh.item.Process;
+import org.apache.commons.io.IOUtils;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
+import java.io.*;
 import java.util.*;
 
 public class Main extends Application {
 
-    private final String APP_NAME = "IdeaDesigner";
-    private final String APP_VERSION = "0.2.0";
+    public final String APP_NAME = "IdeaDesigner";
+    public final String APP_VERSION = "0.2.1";
 
     private final List<Item> itemList = new ArrayList<>();
 
@@ -40,8 +39,10 @@ public class Main extends Application {
         BorderPane root = loader.load();
         controller = loader.getController();
         controller.setMain(this);
+        controller.initialize_();
 
         Scene scene = new Scene(root);
+        JMetro jMetro = new JMetro(scene, Style.DARK);
         primaryStage.setScene(scene);
         primaryStage.setTitle(String.format("%s %s", APP_NAME, APP_VERSION));
         primaryStage.show();
@@ -83,14 +84,19 @@ public class Main extends Application {
     public void compileHTML(File directory) {
         try {
             directory.mkdirs();
-            Files.copy(new File(Main.class.getResource("/image/down_arrow.svg").toURI()).toPath(), new File(directory, "down_arrow.svg").toPath());
-            Files.copy(new File(Main.class.getResource("/image/right_arrow.svg").toURI()).toPath(), new File(directory, "right_arrow.svg").toPath());
-            Files.copy(new File(Main.class.getResource("/image/hopper.svg").toURI()).toPath(), new File(directory, "hopper.svg").toPath());
-            Files.copy(new File(Main.class.getResource("/html/master.css").toURI()).toPath(), new File(directory, "master.css").toPath());
-            Files.copy(new File(Main.class.getResource("/html/jquery.js").toURI()).toPath(), new File(directory, "jquery.js").toPath());
-            Files.copy(new File(Main.class.getResource("/font/a.ttf").toURI()).toPath(), new File(directory, "a.ttf").toPath());
-            Files.copy(new File(Main.class.getResource("/font/b.ttf").toURI()).toPath(), new File(directory, "b.ttf").toPath());
-        } catch (IOException | URISyntaxException e) {
+            OutputStream writer1 = new FileOutputStream(new File(directory, "master.css"));
+            OutputStream writer2 = new FileOutputStream(new File(directory, "jquery.js"));
+            OutputStream writer3 = new FileOutputStream(new File(directory, "a.ttf"));
+            OutputStream writer4 = new FileOutputStream(new File(directory, "b.ttf"));
+            IOUtils.copyLarge(Main.class.getResourceAsStream("/html/master.css"), writer1);
+            IOUtils.copyLarge(Main.class.getResourceAsStream("/html/jquery.js"), writer2);
+            IOUtils.copyLarge(Main.class.getResourceAsStream("/font/a.ttf"), writer3);
+            IOUtils.copyLarge(Main.class.getResourceAsStream("/font/b.ttf"), writer4);
+            writer1.flush();
+            writer2.flush();
+            writer3.flush();
+            writer4.flush();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -108,7 +114,7 @@ public class Main extends Application {
                 if (item instanceof Title) {
                     template = config.getTemplate("/html/title.ftl");
                     data.put("title", ((Title) item).getTitle().get());
-                    data.put("subtitle", "");
+                    data.put("subtitle", ((Title) item).getSubtitle().get());
                 } else if (item instanceof Body) {
                     template = config.getTemplate("/html/body.ftl");
                     data.put("title", ((Body) item).getTitle().get());

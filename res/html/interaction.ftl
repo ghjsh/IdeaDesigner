@@ -42,14 +42,14 @@
         .left_arrow {
             position: absolute;
             left: 47.7vw;
-            top: 35vh;
+            top: 20vh;
             width: 5vw;
         }
 
         .right_arrow {
             position: absolute;
             right: 47.7vw;
-            bottom: 23vh;
+            bottom: 5vh;
             width: 5vw;
             -webkit-transform: rotate(180deg);
             -moz-transform: rotate(180deg);

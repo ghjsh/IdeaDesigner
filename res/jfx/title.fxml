@@ -7,17 +7,20 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jsh.item.TitleController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="195.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jsh.item.TitleController">
   <columnConstraints>
       <ColumnConstraints hgrow="NEVER" maxWidth="295.0" minWidth="10.0" prefWidth="196.0" />
       <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="404.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="138.0" minHeight="0.0" prefHeight="69.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="제목" textAlignment="RIGHT" />
-      <TextField fx:id="title" GridPane.columnIndex="1" />
+      <TextField fx:id="subtitle" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label prefWidth="36.0" text="부제목" textAlignment="RIGHT" GridPane.rowIndex="1" />
+      <TextField fx:id="title" layoutX="206.0" layoutY="66.0" GridPane.columnIndex="1" />
    </children>
     <padding>
         <Insets bottom="30.0" left="80.0" right="80.0" top="30.0" />

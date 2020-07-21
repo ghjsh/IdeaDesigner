@@ -29,8 +29,8 @@
       <TextField fx:id="title" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
       <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="324.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="itemTitle" onEditCommit="#editItemTitle" sortable="false" text="제목" />
-          <TableColumn fx:id="itemContent" onEditCommit="#editItemContent" prefWidth="75.0" sortable="false" text="내용" />
+          <TableColumn fx:id="itemTitle" onEditCommit="#editItemTitle" prefWidth="200.0" sortable="false" text="제목" />
+          <TableColumn fx:id="itemContent" onEditCommit="#editItemContent" prefWidth="172.0" sortable="false" text="내용" />
         </columns>
       </TableView>
       <Label text="내용" GridPane.rowIndex="1" />

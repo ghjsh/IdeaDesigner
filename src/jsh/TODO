@@ -2,11 +2,15 @@ limit children's number
 listview line wrap
 treeview default width
 
-subtitle
+//subtitle
 ui font size, css
-remove image
-last page
-remove unimplemented button
+//remove image
+**last page
+//remove unimplemented button
+//resource
+**animation
+//program title
 
 bug
-ui block scaling
+//ui block scaling
+arrow position

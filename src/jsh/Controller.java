@@ -9,7 +9,6 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
@@ -41,14 +40,14 @@ public class Controller {
         TreeItem<String> title = new TreeItem<>("제목");
         TreeItem<String> body = new TreeItem<>("본문");
         TreeItem<String> textList = new TreeItem<>("목록");
-        TreeItem<String> image = new TreeItem<>("사진");
+        //TreeItem<String> image = new TreeItem<>("사진");
         TreeItem<String> graphic = new TreeItem<>("그래픽");
         TreeItem<String> interaction = new TreeItem<>("상호작용");
         TreeItem<String> hopper = new TreeItem<>("깔때기");
         TreeItem<String> process = new TreeItem<>("과정");
         TreeItem<String> block = new TreeItem<>("블럭");
 
-        root.getChildren().addAll(text, image, graphic);
+        root.getChildren().addAll(text, graphic);
         root.setExpanded(true);
         text.getChildren().addAll(title, body, textList);
         text.setExpanded(true);
@@ -56,6 +55,7 @@ public class Controller {
         graphic.setExpanded(true);
 
         itemList.setRoot(root);
+
     }
 
     @FXML
@@ -87,7 +87,7 @@ public class Controller {
         main.addItem(selected);
     }
 
-    @FXML
+    /* @FXML
     private void deleteItem() {
 
     }
@@ -105,7 +105,7 @@ public class Controller {
     @FXML
     private void moveItemDown() {
 
-    }
+    } */
 
     public void setMain(Main main) {
         this.main = main;
@@ -151,5 +151,9 @@ public class Controller {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void initialize_() {
+        title.setText(String.format("%s %s", main.APP_NAME, main.APP_VERSION));
     }
 }

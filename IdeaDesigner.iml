@@ -11,5 +11,6 @@
     <orderEntry type="library" name="commons-text-1.8" level="project" />
     <orderEntry type="library" name="freemarker" level="project" />
     <orderEntry type="library" name="commons-io-2.7-javadoc" level="project" />
+    <orderEntry type="library" name="jmetro-8.6.11" level="project" />
   </component>
 </module>

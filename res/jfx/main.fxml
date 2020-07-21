@@ -16,11 +16,11 @@
             <Label fx:id="title" text="ProgramName ProgramVersion" />
             <Button mnemonicParsing="false" onAction="#export" text="내보내기" />
             <Button mnemonicParsing="false" onAction="#exportOpen" text="내보내고 열기" />
-            <Separator orientation="VERTICAL" prefHeight="10.0" />
+            <!--Separator orientation="VERTICAL" prefHeight="10.0" />
             <Button mnemonicParsing="false" onAction="#moveItemUp" text="위로 이동" />
             <Button mnemonicParsing="false" onAction="#moveItemDown" text="아래로 이동" />
             <Button mnemonicParsing="false" onAction="#deleteItem" text="아이템 삭제" />
-            <Button mnemonicParsing="false" onAction="#design" text="다자인" />
+            <Button mnemonicParsing="false" onAction="#design" text="다자인" /-->
         </items>
       </ToolBar>
    </top>
